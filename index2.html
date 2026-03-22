@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Changotra Oil Furnace - Leading Industrial Furnace Manufacturer. Battery Recycling Plants, Rotary Furnaces, Pollution Control Devices. Trusted since 2 decades.">
+    <title>Changotra Oil Furnace | Leading Industrial Furnace Manufacturer</title>
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- Critical fonts only -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ===== DESIGN SYSTEM ===== */
+        :root {
+            --red: #e53935;
+            --red-dark: #b71c1c;
+            --red-light: #ff6b6b;
+            --orange: #ff6f00;
+            --dark: #111418;
+            --dark-2: #1c2128;
+            --dark-3: #252d3a;
+            --bg: #ffffff;
+            --bg-2: #f5f6f8;
+            --bg-3: #eceef2;
+            --text: #111418;
+            --text-2: #4a5568;
+            --text-3: #718096;
+            --border: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+            --shadow: 0 4px 12px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.05);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,.1), 0 4px 8px rgba(0,0,0,.06);
+            --shadow-xl: 0 20px 50px rgba(0,0,0,.12), 0 8px 16px rgba(0,0,0,.07);
+            --grad: linear-gradient(135deg, #e53935, #ff6f00);
+            --radius: 14px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+        }
+        [data-theme="dark"] {
+            --bg: #111418;
+            --bg-2: #1c2128;
+            --bg-3: #252d3a;
+            --text: #f0f4f8;
+            --text-2: #a8b2c1;
+            --text-3: #6b7a8d;
+            --border: #2d3548;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,.3);
+            --shadow: 0 4px 12px rgba(0,0,0,.35);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,.4);
+            --shadow-xl: 0 20px 50px rgba(0,0,0,.5);
+        }
+
+        /* ===== BASE ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: 'Manrope', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+            transition: background .3s, color .3s;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1,h2,h3,h4,h5,h6 {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: .03em;
+            line-height: 1.1;
+            color: var(--text);
+        }
+        p { color: var(--text-2); }
+        img { max-width: 100%; height: auto; display: block; }
+        a { text-decoration: none; color: inherit; }
+
+        /* ===== UTILITY ===== */
+        .grad-text {
+            background: var(--grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .sec { padding: 80px 0; }
+        @media (max-width: 768px) { .sec { padding: 60px 0; } }
+
+        /* ===== LOADER ===== */
+        #loader {
+            position: fixed; inset: 0; background: var(--bg);
+            display: flex; align-items: center; justify-content: center;
+            z-index: 9999; transition: opacity .4s, visibility .4s;
+        }
+        #loader.gone { opacity: 0; visibility: hidden; pointer-events: none; }
+        .loader-ring {
+            width: 44px; height: 44px;
+            border: 3px solid var(--border);
+            border-top-color: var(--red);
+            border-radius: 50%;
+            animation: spin .7s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            padding: 0;
+            transition: box-shadow .3s, background .3s;
+        }
+        .navbar.scrolled { box-shadow: var(--shadow); }
+        .nav-inner {
+            display: flex; align-items: center; justify-content: space-between;
+            height: 70px; padding: 0 20px;
+            max-width: 1200px; margin: 0 auto;
+            gap: 16px;
+        }
+        .brand {
+            display: flex; align-items: center; gap: 12px;
+            flex-shrink: 0;
+        }
+        .brand-icon {
+            width: 42px; height: 42px; border-radius: 10px;
+            background: var(--grad); display: flex; align-items: center; justify-content: center;
+            font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; color: #fff;
+            flex-shrink: 0;
+        }
+        .brand-name {
+            font-family: 'Bebas Neue', sans-serif; font-size: 1.25rem;
+            color: var(--text); letter-spacing: .05em; line-height: 1.1;
+        }
+        .brand-sub { font-family: 'Manrope', sans-serif; font-size: .65rem; font-weight: 700; color: var(--red); letter-spacing: .15em; text-transform: uppercase; }
+
+        /* Desktop nav links */
+        .nav-links {
+            display: flex; align-items: center; gap: 4px;
+            list-style: none;
+        }
+        .nav-links a {
+            font-size: .9rem; font-weight: 600; color: var(--text-2);
+            padding: 8px 14px; border-radius: 8px;
+            transition: color .2s, background .2s;
+            white-space: nowrap;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--red); background: rgba(229,57,53,.06); }
+
+        .nav-right { display: flex; align-items: center; gap: 10px; }
+        .btn-quote {
+            background: var(--grad); color: #fff; border: none;
+            padding: 9px 20px; border-radius: 50px; font-weight: 700; font-size: .88rem;
+            cursor: pointer; transition: transform .2s, box-shadow .2s;
+            white-space: nowrap;
+        }
+        .btn-quote:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
+        .theme-btn {
+            width: 40px; height: 40px; border-radius: 10px;
+            background: var(--bg-2); border: 1px solid var(--border);
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; transition: .2s; color: var(--text-2); font-size: 1rem;
+            flex-shrink: 0;
+        }
+        .theme-btn:hover { border-color: var(--red); color: var(--red); }
+
+        /* Hamburger */
+        .hamburger {
+            display: none; flex-direction: column; gap: 5px;
+            cursor: pointer; padding: 6px; background: none; border: none;
+            flex-shrink: 0;
+        }
+        .hamburger span {
+            width: 24px; height: 2px; background: var(--text);
+            border-radius: 2px; transition: .3s; display: block;
+        }
+        .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        /* Mobile drawer */
+        .mobile-drawer {
+            display: none; position: fixed;
+            top: 70px; left: 0; right: 0;
+            background: var(--bg); border-bottom: 1px solid var(--border);
+            padding: 12px 20px 20px; z-index: 999;
+            box-shadow: var(--shadow-lg);
+        }
+        .mobile-drawer.open { display: block; }
+        .mobile-drawer a {
+            display: block; padding: 12px 16px; border-radius: 10px;
+            font-weight: 600; color: var(--text-2);
+            margin-bottom: 4px; transition: .2s;
+        }
+        .mobile-drawer a:hover, .mobile-drawer a.active { color: var(--red); background: rgba(229,57,53,.06); }
+        .mobile-drawer .btn-quote-mobile {
+            display: block; text-align: center; margin-top: 8px;
+            background: var(--grad); color: #fff; padding: 12px; border-radius: 50px; font-weight: 700;
+        }
+
+        @media (max-width: 991px) {
+            .hamburger { display: flex; }
+            .nav-links { display: none; }
+            .btn-quote { display: none; }
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center;
+            background: var(--bg); padding-top: 70px;
+            position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: 0; right: 0;
+            width: 55%; height: 100%;
+            background: var(--grad); opacity: .04;
+            clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+            pointer-events: none;
+        }
+        .hero-title {
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            line-height: 1; margin-bottom: 20px;
+        }
+        .hero-sub {
+            font-size: clamp(1rem, 2vw, 1.2rem); color: var(--text-2);
+            margin-bottom: 28px; max-width: 520px;
+            font-family: 'Manrope', sans-serif;
+        }
+        .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+        .btn-primary {
+            background: var(--grad); color: #fff; border: none;
+            padding: 13px 28px; border-radius: 50px; font-weight: 700; font-size: .95rem;
+            cursor: pointer; transition: transform .2s, box-shadow .2s; display: inline-flex; align-items: center; gap: 8px;
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(229,57,53,.3); color: #fff; }
+        .btn-outline {
+            background: transparent; color: var(--red);
+            border: 2px solid var(--red); padding: 11px 28px;
+            border-radius: 50px; font-weight: 700; font-size: .95rem;
+            cursor: pointer; transition: .2s; display: inline-flex; align-items: center; gap: 8px;
+        }
+        .btn-outline:hover { background: var(--red); color: #fff; }
+
+        .hero-stats {
+            display: flex; gap: 32px; flex-wrap: wrap;
+        }
+        .stat-num {
+            font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem;
+            background: var(--grad); -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; background-clip: text;
+            line-height: 1; display: block;
+        }
+        .stat-lbl { font-size: .85rem; font-weight: 600; color: var(--text-3); margin-top: 2px; }
+
+        /* Hero image */
+        .hero-img-wrap {
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .hero-img {
+            width: 100%; aspect-ratio: 4/3; border-radius: var(--radius-xl);
+            overflow: hidden; background: var(--dark-2);
+            box-shadow: var(--shadow-xl);
+        }
+        .hero-img img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-badge {
+            position: absolute; background: var(--bg);
+            padding: 14px 18px; border-radius: var(--radius);
+            box-shadow: var(--shadow-lg); border: 1px solid var(--border);
+            display: flex; align-items: center; gap: 10px;
+        }
+        .hero-badge-1 { top: -16px; right: -16px; }
+        .hero-badge-2 { bottom: 30px; left: -20px; }
+        .hero-badge strong { color: var(--text); font-size: .9rem; display: block; }
+        .hero-badge small { color: var(--text-3); font-size: .78rem; }
+
+        @media (max-width: 768px) {
+            .hero-badge-1 { top: -12px; right: -8px; padding: 10px 12px; }
+            .hero-badge-2 { display: none; }
+        }
+
+        /* ===== SECTION HEADERS ===== */
+        .sec-head { text-align: center; margin-bottom: 48px; }
+        .sec-title { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 12px; }
+        .sec-sub { color: var(--text-2); font-size: 1.05rem; max-width: 600px; margin: 0 auto; }
+
+        /* ===== CLIENTS ===== */
+        .clients-sec { background: var(--bg-2); overflow: hidden; position: relative; }
+        .clients-sec::before, .clients-sec::after {
+            content: ''; position: absolute; top: 0; width: 120px; height: 100%;
+            z-index: 2; pointer-events: none;
+        }
+        .clients-sec::before { left: 0; background: linear-gradient(to right, var(--bg-2), transparent); }
+        .clients-sec::after { right: 0; background: linear-gradient(to left, var(--bg-2), transparent); }
+        .track-wrap { overflow: hidden; padding: 10px 0; }
+        .track {
+            display: flex; gap: 20px; width: max-content;
+            animation: scroll-l 35s linear infinite;
+        }
+        .track-r { animation: scroll-r 35s linear infinite; }
+        .track:hover, .track-r:hover { animation-play-state: paused; }
+        @keyframes scroll-l { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        @keyframes scroll-r { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+        .client-chip {
+            flex-shrink: 0; height: 70px; padding: 10px 24px;
+            background: var(--bg); border: 1px solid var(--border);
+            border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow-sm); transition: .2s; min-width: 150px;
+        }
+        .client-chip:hover { border-color: var(--red); box-shadow: var(--shadow); }
+        .client-chip img {
+            max-height: 40px; max-width: 120px;
+            object-fit: contain; filter: grayscale(80%) opacity(.75);
+            transition: .2s;
+        }
+        .client-chip:hover img { filter: none; opacity: 1; }
+        .client-chip .fallback-name {
+            font-weight: 700; font-size: .8rem; color: var(--text-3);
+            letter-spacing: .05em;
+        }
+
+        /* ===== ABOUT FEATURES ===== */
+        .about-sec { background: var(--bg); }
+        .feat-card {
+            background: var(--bg-2); padding: 32px 28px;
+            border-radius: var(--radius-lg); text-align: center;
+            border: 1px solid var(--border); transition: .25s; height: 100%;
+        }
+        .feat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--red); }
+        .feat-icon {
+            width: 72px; height: 72px; margin: 0 auto 20px;
+            background: var(--grad); border-radius: 18px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem; color: #fff;
+        }
+        .feat-card h4 { font-size: 1.4rem; margin-bottom: 10px; }
+        .feat-card p { color: var(--text-2); font-size: .95rem; margin: 0; }
+
+        /* ===== PRODUCTS ===== */
+        .products-sec { background: var(--bg-2); }
+        .prod-card {
+            background: var(--bg); border-radius: var(--radius-lg);
+            border: 1px solid var(--border); overflow: hidden;
+            transition: .25s; cursor: pointer; height: 100%;
+            display: flex; flex-direction: column;
+        }
+        .prod-card:hover, .prod-card.open { box-shadow: var(--shadow-lg); border-color: var(--red); }
+        .prod-head {
+            background: var(--grad); color: #fff;
+            padding: 28px 24px; position: relative; overflow: hidden;
+        }
+        .prod-head::after {
+            content: ''; position: absolute; top: -40%; right: -15px;
+            width: 130px; height: 130px; border-radius: 50%;
+            background: rgba(255,255,255,.08);
+        }
+        .prod-badge {
+            position: absolute; top: 14px; right: 14px;
+            background: rgba(255,255,255,.2); backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,.25);
+            padding: 4px 12px; border-radius: 50px; font-size: .72rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: .08em;
+        }
+        .prod-icon { font-size: 2.6rem; margin-bottom: 12px; display: block; opacity: .9; }
+        .prod-head h3 { font-size: 1.6rem; color: #fff; }
+        .prod-body { padding: 22px; flex: 1; }
+        .prod-desc { color: var(--text-2); font-size: .95rem; margin-bottom: 14px; }
+        .prod-expand {
+            max-height: 0; overflow: hidden; opacity: 0;
+            transition: max-height .45s ease, opacity .3s ease;
+        }
+        .prod-card.open .prod-expand { max-height: 600px; opacity: 1; }
+        .prod-feats { list-style: none; padding: 0; margin: 12px 0 0; }
+        .prod-feats li {
+            padding: 9px 0; color: var(--text-2); font-size: .9rem;
+            border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px;
+        }
+        .prod-feats li:last-child { border: none; }
+        .prod-feats i { color: var(--red); flex-shrink: 0; }
+        .prod-apps {
+            background: rgba(229,57,53,.05); border-left: 3px solid var(--red);
+            padding: 10px 14px; border-radius: 0 10px 10px 0; margin-top: 14px; font-size: .88rem;
+        }
+        .prod-apps strong { color: var(--red); }
+        .prod-toggle {
+            display: flex; align-items: center; gap: 6px; margin-top: 14px;
+            color: var(--red); font-weight: 700; font-size: .88rem;
+            background: none; border: none; cursor: pointer; padding: 0;
+            transition: .2s;
+        }
+        .prod-toggle i { transition: transform .3s; }
+        .prod-card.open .prod-toggle i { transform: rotate(180deg); }
+
+        /* ===== WHY CHOOSE ===== */
+        .why-sec {
+            background: linear-gradient(135deg, var(--dark), var(--dark-2));
+            color: #fff;
+        }
+        .why-sec .sec-title { color: #fff; }
+        .why-sec .sec-sub { color: rgba(255,255,255,.6); }
+        .why-card {
+            background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+            border-radius: var(--radius-lg); padding: 32px 28px; text-align: center;
+            transition: .25s; height: 100%;
+        }
+        .why-card:hover { background: rgba(255,255,255,.08); transform: translateY(-3px); border-color: var(--red); }
+        .why-icon {
+            width: 72px; height: 72px; margin: 0 auto 20px;
+            background: var(--grad); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem; color: #fff;
+        }
+        .why-card h4 { color: #fff; font-size: 1.4rem; margin-bottom: 10px; }
+        .why-card p { color: rgba(255,255,255,.65); margin: 0; font-size: .95rem; }
+
+        /* ===== YOUTUBE SECTION ===== */
+        .yt-sec { background: var(--bg); }
+
+        /* Featured video */
+        .yt-featured {
+            background: var(--bg-2); border-radius: var(--radius-xl);
+            overflow: hidden; border: 1px solid var(--border);
+            box-shadow: var(--shadow-xl);
+        }
+        .yt-featured-embed {
+            position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+        }
+        .yt-featured-embed iframe {
+            position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%; border: none;
+        }
+        .yt-featured-info {
+            padding: 28px 32px;
+        }
+        .yt-featured-info h3 {
+            font-size: 1.8rem; margin-bottom: 10px;
+        }
+        .yt-featured-info p {
+            color: var(--text-2); font-size: .95rem; margin: 0;
+        }
+        .yt-tag {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(229,57,53,.1); color: var(--red);
+            padding: 5px 12px; border-radius: 50px; font-size: .8rem; font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        /* Video cards grid */
+        .yt-grid { margin-top: 48px; }
+        .yt-card {
+            background: var(--bg-2); border-radius: var(--radius-lg);
+            border: 1px solid var(--border); overflow: hidden;
+            transition: .25s; height: 100%;
+            display: flex; flex-direction: column;
+        }
+        .yt-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: var(--red); }
+
+        /* Lazy-loaded YouTube thumbnails with play overlay */
+        .yt-thumb {
+            position: relative; overflow: hidden;
+            aspect-ratio: 16/9; background: var(--bg-3); cursor: pointer;
+        }
+        .yt-thumb img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform .4s;
+        }
+        .yt-card:hover .yt-thumb img { transform: scale(1.04); }
+        .yt-play {
+            position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+            background: rgba(0,0,0,.35); transition: .3s;
+        }
+        .yt-card:hover .yt-play { background: rgba(0,0,0,.5); }
+        .yt-play-btn {
+            width: 56px; height: 56px; background: #ff0000;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,.5); transition: transform .2s;
+        }
+        .yt-card:hover .yt-play-btn { transform: scale(1.1); }
+        .yt-play-btn i { color: #fff; font-size: 1.4rem; margin-left: 4px; }
+        .yt-duration {
+            position: absolute; bottom: 10px; right: 10px;
+            background: rgba(0,0,0,.8); color: #fff; font-size: .78rem; font-weight: 700;
+            padding: 3px 8px; border-radius: 4px;
+        }
+        .yt-card-body { padding: 18px 20px; flex: 1; display: flex; flex-direction: column; }
+        .yt-card-body h5 { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 8px; color: var(--text); }
+        .yt-card-body p { font-size: .88rem; color: var(--text-3); flex: 1; margin: 0 0 14px; }
+        .yt-watch-btn {
+            display: inline-flex; align-items: center; gap: 6px;
+            color: var(--red); font-weight: 700; font-size: .88rem;
+            transition: gap .2s;
+        }
+        .yt-watch-btn:hover { gap: 10px; }
+
+        /* Inline embed modal for video cards */
+        .yt-embed-wrap {
+            display: none; position: relative;
+            padding-bottom: 56.25%; background: #000;
+        }
+        .yt-embed-wrap.active { display: block; }
+        .yt-embed-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+        .yt-close {
+            position: absolute; top: 10px; right: 10px; z-index: 10;
+            width: 32px; height: 32px; background: rgba(0,0,0,.7);
+            border-radius: 50%; border: none; color: #fff; cursor: pointer;
+            display: flex; align-items: center; justify-content: center; font-size: .9rem;
+        }
+
+        /* Channel CTA */
+        .yt-cta {
+            text-align: center; margin-top: 40px; padding: 40px;
+            background: var(--bg-2); border-radius: var(--radius-xl);
+            border: 1px solid var(--border);
+        }
+        .yt-cta h4 { font-size: 1.8rem; margin-bottom: 10px; }
+        .yt-cta p { color: var(--text-2); margin-bottom: 20px; }
+        .btn-yt {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: #ff0000; color: #fff; padding: 12px 28px;
+            border-radius: 50px; font-weight: 700; font-size: .95rem;
+            transition: transform .2s, box-shadow .2s;
+        }
+        .btn-yt:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(255,0,0,.3); color: #fff; }
+
+        /* ===== CONTACT ===== */
+        .contact-sec { background: var(--bg-2); }
+        .contact-card {
+            background: var(--bg); border-radius: var(--radius-lg);
+            border: 1px solid var(--border); padding: 22px;
+            display: flex; gap: 16px; align-items: flex-start;
+            transition: .25s; box-shadow: var(--shadow-sm); height: 100%;
+        }
+        .contact-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: var(--red); }
+        .cc-icon {
+            width: 52px; height: 52px; flex-shrink: 0;
+            background: var(--grad); border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-size: 1.3rem;
+        }
+        .cc-body h5 { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 6px; }
+        .cc-body p { font-size: .9rem; color: var(--text-2); margin: 0; line-height: 1.5; }
+        .cc-body a { color: var(--text-2); transition: color .2s; }
+        .cc-body a:hover { color: var(--red); }
+        .cc-link {
+            display: inline-flex; align-items: center; gap: 5px;
+            color: var(--red); font-weight: 700; font-size: .85rem;
+            margin-top: 8px; transition: gap .2s;
+        }
+        .cc-link:hover { gap: 8px; }
+
+        /* Info panel */
+        .info-panel {
+            background: var(--bg); border-radius: var(--radius-xl);
+            border: 1px solid var(--border); padding: 36px;
+            box-shadow: var(--shadow); height: 100%;
+        }
+        .info-panel h3 { font-size: 2rem; margin-bottom: 12px; }
+        .benefit-row {
+            display: flex; gap: 14px; align-items: flex-start;
+            padding: 14px; border-radius: 12px; margin-bottom: 4px;
+            transition: .2s;
+        }
+        .benefit-row:hover { background: var(--bg-2); }
+        .ben-icon {
+            width: 40px; height: 40px; flex-shrink: 0;
+            background: var(--grad); border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-size: 1.1rem;
+        }
+        .ben-body h6 { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: .95rem; margin-bottom: 3px; }
+        .ben-body p { font-size: .87rem; color: var(--text-3); margin: 0; }
+        .cta-box {
+            background: var(--grad); border-radius: var(--radius-lg);
+            padding: 22px 24px; margin-top: 24px;
+            display: flex; align-items: center; gap: 16px;
+        }
+        .cta-box i { font-size: 2.2rem; color: #fff; flex-shrink: 0; }
+        .cta-box h5 { color: #fff; margin-bottom: 3px; font-size: 1.1rem; }
+        .cta-box p { color: rgba(255,255,255,.7); font-size: .85rem; margin: 0; }
+        .cta-box a { color: #fff; font-weight: 700; font-size: 1.05rem; }
+
+        /* Form */
+        .form-panel {
+            background: var(--bg); border-radius: var(--radius-xl);
+            border: 1px solid var(--border); padding: 36px;
+            box-shadow: var(--shadow); height: 100%;
+        }
+        .form-panel h3 { font-size: 2rem; margin-bottom: 24px; }
+        .form-lbl { font-weight: 700; font-size: .88rem; color: var(--text); display: block; margin-bottom: 6px; }
+        .form-ctrl {
+            width: 100%; padding: 11px 14px;
+            border: 2px solid var(--border); border-radius: 12px;
+            background: var(--bg-2); color: var(--text); font-size: .95rem;
+            font-family: 'Manrope', sans-serif;
+            transition: border-color .2s, background .2s;
+            -webkit-appearance: none;
+        }
+        .form-ctrl:focus { outline: none; border-color: var(--red); background: var(--bg); box-shadow: 0 0 0 3px rgba(229,57,53,.1); }
+        .form-ctrl::placeholder { color: var(--text-3); }
+        textarea.form-ctrl { resize: vertical; min-height: 120px; }
+        .submit-btn {
+            width: 100%; background: var(--grad); color: #fff; border: none;
+            padding: 14px; border-radius: 50px; font-weight: 700; font-size: 1rem;
+            cursor: pointer; transition: .2s; display: flex; align-items: center; justify-content: center; gap: 8px;
+            font-family: 'Manrope', sans-serif;
+        }
+        .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(229,57,53,.3); }
+        .submit-btn.success { background: linear-gradient(135deg, #28a745, #20c997) !important; }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark); color: rgba(255,255,255,.75); padding: 70px 0 28px;
+        }
+        .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: #fff; letter-spacing: .05em; }
+        .footer-tagline { font-size: .75rem; font-weight: 700; color: var(--red-light); letter-spacing: .15em; text-transform: uppercase; margin-top: 2px; }
+        .footer-desc { color: rgba(255,255,255,.55); font-size: .9rem; margin-top: 14px; line-height: 1.7; }
+        .social-row { display: flex; gap: 10px; margin-top: 20px; }
+        .soc-btn {
+            width: 44px; height: 44px; border-radius: 11px;
+            background: rgba(255,255,255,.08); color: rgba(255,255,255,.7);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem; transition: .25s;
+        }
+        .soc-btn:hover { background: var(--grad); color: #fff; transform: translateY(-3px); }
+        .footer-heading { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 1rem; color: #fff; margin-bottom: 16px; }
+        .footer-list { list-style: none; padding: 0; margin: 0; }
+        .footer-list li { margin-bottom: 10px; }
+        .footer-list a {
+            color: rgba(255,255,255,.55); font-size: .9rem;
+            display: inline-flex; align-items: center; gap: 6px;
+            transition: .2s;
+        }
+        .footer-list a:hover { color: var(--red-light); transform: translateX(4px); }
+        .footer-list span { color: rgba(255,255,255,.55); font-size: .9rem; display: flex; align-items: center; gap: 8px; }
+        .footer-bottom {
+            margin-top: 50px; padding-top: 22px;
+            border-top: 1px solid rgba(255,255,255,.08);
+            text-align: center; color: rgba(255,255,255,.35); font-size: .85rem;
+        }
+
+        /* ===== SCROLL TO TOP ===== */
+        #stt {
+            position: fixed; bottom: 24px; right: 24px; z-index: 999;
+            width: 44px; height: 44px; border-radius: 50%;
+            background: var(--grad); color: #fff; border: none;
+            cursor: pointer; opacity: 0; visibility: hidden; transition: .3s;
+            display: flex; align-items: center; justify-content: center; font-size: 1rem;
+            box-shadow: var(--shadow);
+        }
+        #stt.vis { opacity: 1; visibility: visible; }
+        #stt:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+
+        /* ===== AOS-LIKE ANIMATIONS ===== */
+        .reveal {
+            opacity: 0; transform: translateY(24px);
+            transition: opacity .6s ease, transform .6s ease;
+        }
+        .reveal.revealed { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: .1s; }
+        .reveal-delay-2 { transition-delay: .2s; }
+        .reveal-delay-3 { transition-delay: .3s; }
+
+        /* ===== RESPONSIVE TWEAKS ===== */
+        @media (max-width: 768px) {
+            .info-panel, .form-panel { padding: 24px 20px; }
+            .cta-box { flex-direction: column; text-align: center; }
+            .hero-stats { gap: 20px; }
+            .yt-featured-info { padding: 20px; }
+            .yt-cta { padding: 28px 20px; }
+            .contact-card { flex-direction: column; align-items: center; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader"><div class="loader-ring"></div></div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+    <div class="nav-inner">
+        <a href="#home" class="brand">
+            <div class="brand-icon">COF</div>
+            <div>
+                <div class="brand-name">Changotra Oil Furnace</div>
+                <div class="brand-sub">We Earned Trust</div>
+            </div>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#videos">Videos</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <a href="#contact" class="btn-quote">Get Quote</a>
+            <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+                <i class="fas fa-moon" id="themeIcon"></i>
+            </button>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-drawer" id="mobileDrawer">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#videos">Videos</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="btn-quote-mobile">Get a Quote</a>
+</div>
+
+<!-- HERO -->
+<section id="home" class="hero">
+    <div class="container">
+        <div class="row align-items-center gy-5">
+            <div class="col-lg-6 reveal">
+                <h1 class="hero-title">
+                    Industrial Excellence in<br>
+                    <span class="grad-text">Furnace Manufacturing</span>
+                </h1>
+                <p class="hero-sub">
+                    Leading manufacturer of industrial furnace plants, battery recycling systems, and pollution control solutions. Trusted by industries across India for over two decades.
+                </p>
+                <div class="hero-btns">
+                    <a href="#products" class="btn-primary"><i class="fas fa-industry"></i> Explore Products</a>
+                    <a href="#contact" class="btn-outline"><i class="fas fa-phone"></i> Contact Us</a>
+                </div>
+                <div class="hero-stats">
+                    <div>
+                        <span class="stat-num" data-count="20">0+</span>
+                        <span class="stat-lbl">Years Experience</span>
+                    </div>
+                    <div>
+                        <span class="stat-num" data-count="500">0+</span>
+                        <span class="stat-lbl">Projects Completed</span>
+                    </div>
+                    <div>
+                        <span class="stat-num" data-count="100">0+</span>
+                        <span class="stat-lbl">Happy Clients</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 reveal reveal-delay-2">
+                <div class="hero-img-wrap">
+                    <div class="hero-img">
+                        <img src="https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?q=80&w=900&auto=format&fit=crop" alt="Industrial Furnace Facility" loading="lazy">
+                    </div>
+                    <div class="hero-badge hero-badge-1">
+                        <i class="fas fa-certificate" style="color:#ffc107;font-size:1.8rem;"></i>
+                        <div>
+                            <strong>ISO Certified</strong>
+                            <small>Quality Assured</small>
+                        </div>
+                    </div>
+                    <div class="hero-badge hero-badge-2">
+                        <i class="fas fa-leaf" style="color:#28a745;font-size:1.8rem;"></i>
+                        <div>
+                            <strong>Eco-Friendly</strong>
+                            <small>Green Solutions</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CLIENTS CAROUSEL -->
+<section class="clients-sec sec">
+    <div class="container">
+        <div class="sec-head reveal">
+            <h2 class="sec-title">Companies <span class="grad-text">We've Worked With</span></h2>
+            <p class="sec-sub">Trusted by leading manufacturers and industrial plants across India</p>
+        </div>
+    </div>
+
+    <!-- Track 1 -->
+    <div class="track-wrap">
+        <div class="track" id="track1">
+            <!-- JS will duplicate these -->
+            <div class="client-chip"><span class="fallback-name">TATA Motors</span></div>
+            <div class="client-chip"><span class="fallback-name">Hindustan Zinc</span></div>
+            <div class="client-chip"><img src="https://www.anshikafasteners.com/images/header/logo.png" alt="Anshika Fasteners" onerror="this.parentNode.innerHTML='<span class=\'fallback-name\'>Anshika Fasteners</span>'"></div>
+            <div class="client-chip"><span class="fallback-name">Bharat Heavy</span></div>
+            <div class="client-chip"><span class="fallback-name">Larsen & Toubro</span></div>
+            <div class="client-chip"><span class="fallback-name">JSW Steel</span></div>
+            <div class="client-chip"><span class="fallback-name">Vedanta Group</span></div>
+            <div class="client-chip"><span class="fallback-name">Hindalco</span></div>
+        </div>
+    </div>
+
+    <!-- Track 2 -->
+    <div class="track-wrap mt-3">
+        <div class="track track-r" id="track2">
+            <div class="client-chip"><span class="fallback-name">Exide Industries</span></div>
+            <div class="client-chip"><span class="fallback-name">Amaron</span></div>
+            <div class="client-chip"><span class="fallback-name">SF SONIC</span></div>
+            <div class="client-chip"><span class="fallback-name">Luminous Power</span></div>
+            <div class="client-chip"><img src="https://www.su-kam.com/wp-content/uploads/2024/06/Untitled-design.png" alt="Su-Kam" onerror="this.parentNode.innerHTML='<span class=\'fallback-name\'>Su-Kam</span>'"></div>
+            <div class="client-chip"><span class="fallback-name">Microtek</span></div>
+            <div class="client-chip"><span class="fallback-name">Base Corp</span></div>
+            <div class="client-chip"><span class="fallback-name">Okaya Power</span></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="text-center mt-5 reveal">
+            <p style="color:var(--text-2);margin-bottom:16px;">Join these industry leaders who trust Changotra Oil Furnace</p>
+            <a href="#contact" class="btn-primary"><i class="fas fa-handshake"></i> Work With Us</a>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about-sec sec">
+    <div class="container">
+        <div class="sec-head reveal">
+            <h2 class="sec-title">About <span class="grad-text">Our Company</span></h2>
+            <p class="sec-sub">With decades of expertise, we've established ourselves as leaders in industrial furnace manufacturing</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6 reveal"><div class="feat-card"><div class="feat-icon"><i class="fas fa-award"></i></div><h4>Quality Certified</h4><p>ISO certified manufacturing processes ensuring highest quality standards</p></div></div>
+            <div class="col-lg-3 col-md-6 reveal reveal-delay-1"><div class="feat-card"><div class="feat-icon"><i class="fas fa-users"></i></div><h4>Expert Team</h4><p>Decades of combined experience in industrial furnace design and manufacturing</p></div></div>
+            <div class="col-lg-3 col-md-6 reveal reveal-delay-2"><div class="feat-card"><div class="feat-icon"><i class="fas fa-cogs"></i></div><h4>Custom Solutions</h4><p>Tailored designs to meet specific industrial requirements and challenges</p></div></div>
+            <div class="col-lg-3 col-md-6 reveal reveal-delay-3"><div class="feat-card"><div class="feat-icon"><i class="fas fa-headset"></i></div><h4>24/7 Support</h4><p>Round-the-clock technical support and maintenance services</p></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" class="products-sec sec">
+    <div class="container">
+        <div class="sec-head reveal">
+            <h2 class="sec-title">Our <span class="grad-text">Products</span></h2>
+            <p class="sec-sub">Click on any product card to see detailed information and features</p>
+        </div>
+        <div class="row g-4">
+
+            <!-- Product 1 -->
+            <div class="col-lg-4 col-md-6 reveal">
+                <div class="prod-card">
+                    <div class="prod-head"><span class="prod-badge">Featured</span><i class="fas fa-recycle prod-icon"></i><h3>Battery Recycling Plant</h3></div>
+                    <div class="prod-body">
+                        <p class="prod-desc">Complete systems for efficient and environmentally friendly recycling of lead-acid batteries.</p>
+                        <button class="prod-toggle"><span>View Details</span><i class="fas fa-chevron-down"></i></button>
+                        <div class="prod-expand">
+                            <ul class="prod-feats">
+                                <li><i class="fas fa-check-circle"></i> High recovery rates (up to 98%)</li>
+                                <li><i class="fas fa-check-circle"></i> Environmentally compliant design</li>
+                                <li><i class="fas fa-check-circle"></i> Automated processing systems</li>
+                                <li><i class="fas fa-check-circle"></i> Energy efficient operations</li>
+                                <li><i class="fas fa-check-circle"></i> Custom capacity from 5–100 TPD</li>
+                            </ul>
+                            <div class="prod-apps"><strong>Applications:</strong> Lead recovery, Battery manufacturing units, Metal recovery plants</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="col-lg-4 col-md-6 reveal reveal-delay-1">
+                <div class="prod-card">
+                    <div class="prod-head"><span class="prod-badge">Popular</span><i class="fas fa-fire prod-icon"></i><h3>Rotary Furnace</h3></div>
+                    <div class="prod-body">
+                        <p class="prod-desc">High-efficiency rotary furnaces for smelting and thermal processing applications.</p>
+                        <button class="prod-toggle"><span>View Details</span><i class="fas fa-chevron-down"></i></button>
+                        <div class="prod-expand">
+                            <ul class="prod-feats">
+                                <li><i class="fas fa-check-circle"></i> Temperature: 800°C – 1600°C</li>
+                                <li><i class="fas fa-check-circle"></i> Fuel efficient design</li>
+                                <li><i class="fas fa-check-circle"></i> Automatic temperature control</li>
+                                <li><i class="fas fa-check-circle"></i> Durable refractory lining</li>
+                                <li><i class="fas fa-check-circle"></i> Capacities from 1–50 tons</li>
+                            </ul>
+                            <div class="prod-apps"><strong>Applications:</strong> Metal melting, Heat treatment, Cement production, Chemical processing</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="col-lg-4 col-md-6 reveal reveal-delay-2">
+                <div class="prod-card">
+                    <div class="prod-head"><i class="fas fa-wind prod-icon"></i><h3>Pollution Control Device</h3></div>
+                    <div class="prod-body">
+                        <p class="prod-desc">Advanced systems to meet environmental standards and reduce industrial emissions.</p>
+                        <button class="prod-toggle"><span>View Details</span><i class="fas fa-chevron-down"></i></button>
+                        <div class="prod-expand">
+                            <ul class="prod-feats">
+                                <li><i class="fas fa-check-circle"></i> 99% particulate removal efficiency</li>
+                                <li><i class="fas fa-check-circle"></i> Low maintenance design</li>
+                                <li><i class="fas fa-check-circle"></i> Energy recovery systems</li>
+                                <li><i class="fas fa-check-circle"></i> Real-time monitoring</li>
+                                <li><i class="fas fa-check-circle"></i> Custom configurations available</li>
+                            </ul>
+                            <div class="prod-apps"><strong>Applications:</strong> Industrial exhaust systems, Chemical plants, Metal processing units</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="col-lg-4 col-md-6 reveal">
+                <div class="prod-card">
+                    <div class="prod-head"><i class="fas fa-industry prod-icon"></i><h3>Grey Oxide Plant</h3></div>
+                    <div class="prod-body">
+                        <p class="prod-desc">Specialized plants for production of grey oxide used in battery manufacturing.</p>
+                        <button class="prod-toggle"><span>View Details</span><i class="fas fa-chevron-down"></i></button>
+                        <div class="prod-expand">
+                            <ul class="prod-feats">
+                                <li><i class="fas fa-check-circle"></i> High purity output</li>
+                                <li><i class="fas fa-check-circle"></i> Automated process control</li>
+                                <li><i class="fas fa-check-circle"></i> Consistent particle size</li>
+                                <li><i class="fas fa-check-circle"></i> Energy efficient design</li>
+                                <li><i class="fas fa-check-circle"></i> Capacity: 5–50 TPD</li>
+                            </ul>
+                            <div class="prod-apps"><strong>Applications:</strong> Battery manufacturing, Chemical industry, Paint industry</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="col-lg-4 col-md-6 reveal reveal-delay-1">
+                <div class="prod-card">
+                    <div class="prod-head"><i class="fas fa-flask prod-icon"></i><h3>Litharge Manufacturing</h3></div>
+                    <div class="prod-body">
+                        <p class="prod-desc">Complete plants for producing high-purity litharge for industrial applications.</p>
+                        <button class="prod-toggle"><span>View Details</span><i class="fas fa-chevron-down"></i></button>
+                        <div class="prod-expand">
+                            <ul class="prod-feats">
+                                <li><i class="fas fa-check-circle"></i> 99.5% purity guaranteed</li>
+                                <li><i class="fas fa-check-circle"></i> Automated quality control</li>
+                                <li><i class="fas fa-check-circle"></i> Temperature controlled process</li>
+                                <li><i class="fas fa-check-circle"></i> Dust collection systems</li>
+                                <li><i class="fas fa-check-circle"></i> Production: 2–20 TPD</li>
+                            </ul>
+                            <div class="prod-apps"><strong>Applications:</strong> Glass manufacturing, Ceramics, PVC stabilizers, Paint industry</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="col-lg-4 col-md-6 reveal reveal-delay-2">
+                <div class="prod-card">
+                    <div class="prod-head"><span class="prod-badge">New</span><i class="fas fa-atom prod-icon"></i><h3>Zinc Oxide Plant</h3></div>
+                    <div class="prod-body">
+                        <p class="prod-desc">Specialized plants for zinc oxide production using advanced French process technology.</p>
+                        <button class="prod-toggle"><span>View Details</span><i class="fas fa-chevron-down"></i></button>
+                        <div class="prod-expand">
+                            <ul class="prod-feats">
+                                <li><i class="fas fa-check-circle"></i> French process technology</li>
+                                <li><i class="fas fa-check-circle"></i> High surface area product</li>
+                                <li><i class="fas fa-check-circle"></i> Particle size control</li>
+                                <li><i class="fas fa-check-circle"></i> Energy recovery system</li>
+                                <li><i class="fas fa-check-circle"></i> Production: 5–50 TPD</li>
+                            </ul>
+                            <div class="prod-apps"><strong>Applications:</strong> Rubber industry, Ceramics, Pharmaceuticals, Cosmetics</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section id="why-choose" class="why-sec sec">
+    <div class="container">
+        <div class="sec-head reveal">
+            <h2 class="sec-title">Why Choose <span class="grad-text">Changotra</span></h2>
+            <p class="sec-sub" style="color:rgba(255,255,255,.6);">Discover what sets us apart in the industrial manufacturing sector</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6 reveal"><div class="why-card"><div class="why-icon"><i class="fas fa-medal"></i></div><h4>Proven Expertise</h4><p>Decades of experience delivering reliable industrial solutions</p></div></div>
+            <div class="col-lg-3 col-md-6 reveal reveal-delay-1"><div class="why-card"><div class="why-icon"><i class="fas fa-leaf"></i></div><h4>Eco-Friendly</h4><p>Environmentally conscious manufacturing and pollution control</p></div></div>
+            <div class="col-lg-3 col-md-6 reveal reveal-delay-2"><div class="why-card"><div class="why-icon"><i class="fas fa-tachometer-alt"></i></div><h4>High Efficiency</h4><p>Optimized designs for maximum productivity and energy savings</p></div></div>
+            <div class="col-lg-3 col-md-6 reveal reveal-delay-3"><div class="why-card"><div class="why-icon"><i class="fas fa-shield-alt"></i></div><h4>Safety First</h4><p>Rigorous safety standards and quality control protocols</p></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- YOUTUBE SECTION -->
+<section id="videos" class="yt-sec sec">
+    <div class="container">
+        <div class="sec-head reveal">
+            <h2 class="sec-title">Watch Us <span class="grad-text">In Action</span></h2>
+            <p class="sec-sub">See our manufacturing processes, facility tours, and client success stories</p>
+        </div>
+
+        <!-- Featured Video -->
+        <div class="yt-featured reveal">
+            <div class="row g-0 align-items-stretch">
+                <div class="col-lg-8">
+                    <div class="yt-featured-embed">
+                        <!-- Using a real YouTube embed for demo — replace dQw4w9WgXcQ with your actual video ID -->
+                        <iframe
+                            src="https://www.youtube.com/embed/5qap5aO4i9A?rel=0&modestbranding=1"
+                            title="Industrial Furnace Manufacturing Overview"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-flex align-items-center">
+                    <div class="yt-featured-info">
+                        <span class="yt-tag"><i class="fab fa-youtube"></i> Featured Video</span>
+                        <h3>Our Facility Tour</h3>
+                        <p>Take a virtual walkthrough of our state-of-the-art manufacturing plant. See how our expert engineers combine traditional craftsmanship with modern industrial technology.</p>
+                        <div class="d-flex gap-3 mt-4 flex-wrap">
+                            <div style="text-align:center;">
+                                <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">50+</div>
+                                <div style="font-size:.8rem;color:var(--text-3);font-weight:600;">Videos</div>
+                            </div>
+                            <div style="text-align:center;">
+                                <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">100K+</div>
+                                <div style="font-size:.8rem;color:var(--text-3);font-weight:600;">Total Views</div>
+                            </div>
+                            <div style="text-align:center;">
+                                <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">15+</div>
+                                <div style="font-size:.8rem;color:var(--text-3);font-weight:600;">Yrs on YouTube</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Grid -->
+        <div class="yt-grid">
+            <div class="row g-4">
+
+                <!-- Video Card 1 -->
+                <div class="col-lg-4 col-md-6 reveal">
+                    <div class="yt-card">
+                        <!-- Thumbnail + play; clicking loads iframe inline -->
+                        <div class="yt-thumb" data-video-id="L_jWHffIx5E" onclick="loadYTVideo(this)">
+                            <img src="https://img.youtube.com/vi/L_jWHffIx5E/hqdefault.jpg" alt="Battery Recycling Plant Tour" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=480&q=70'">
+                            <div class="yt-play"><div class="yt-play-btn"><i class="fas fa-play"></i></div></div>
+                            <span class="yt-duration">12:45</span>
+                        </div>
+                        <div class="yt-embed-wrap" id="embed-L_jWHffIx5E">
+                            <iframe src="" title="Battery Recycling Plant" allow="autoplay;encrypted-media" allowfullscreen loading="lazy"></iframe>
+                            <button class="yt-close" onclick="closeYTVideo('L_jWHffIx5E')"><i class="fas fa-times"></i></button>
+                        </div>
+                        <div class="yt-card-body">
+                            <h5>Battery Recycling Plant Tour</h5>
+                            <p>Complete walkthrough of our lead-acid battery recycling facility and process flow.</p>
+                            <a href="https://www.youtube.com/watch?v=L_jWHffIx5E" target="_blank" class="yt-watch-btn">Watch on YouTube <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Card 2 -->
+                <div class="col-lg-4 col-md-6 reveal reveal-delay-1">
+                    <div class="yt-card">
+                        <div class="yt-thumb" data-video-id="dEFDC_JBdEY" onclick="loadYTVideo(this)">
+                            <img src="https://img.youtube.com/vi/dEFDC_JBdEY/hqdefault.jpg" alt="Rotary Furnace Operation" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=480&q=70'">
+                            <div class="yt-play"><div class="yt-play-btn"><i class="fas fa-play"></i></div></div>
+                            <span class="yt-duration">08:30</span>
+                        </div>
+                        <div class="yt-embed-wrap" id="embed-dEFDC_JBdEY">
+                            <iframe src="" title="Rotary Furnace" allow="autoplay;encrypted-media" allowfullscreen loading="lazy"></iframe>
+                            <button class="yt-close" onclick="closeYTVideo('dEFDC_JBdEY')"><i class="fas fa-times"></i></button>
+                        </div>
+                        <div class="yt-card-body">
+                            <h5>Rotary Furnace – How It Works</h5>
+                            <p>Technical explanation of how our rotary furnaces achieve maximum efficiency in smelting operations.</p>
+                            <a href="https://www.youtube.com/watch?v=dEFDC_JBdEY" target="_blank" class="yt-watch-btn">Watch on YouTube <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Card 3 -->
+                <div class="col-lg-4 col-md-6 reveal reveal-delay-2">
+                    <div class="yt-card">
+                        <div class="yt-thumb" data-video-id="1zkyapT1mHI" onclick="loadYTVideo(this)">
+                            <img src="https://img.youtube.com/vi/1zkyapT1mHI/hqdefault.jpg" alt="Pollution Control Systems" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=480&q=70'">
+                            <div class="yt-play"><div class="yt-play-btn"><i class="fas fa-play"></i></div></div>
+                            <span class="yt-duration">10:15</span>
+                        </div>
+                        <div class="yt-embed-wrap" id="embed-1zkyapT1mHI">
+                            <iframe src="" title="Pollution Control" allow="autoplay;encrypted-media" allowfullscreen loading="lazy"></iframe>
+                            <button class="yt-close" onclick="closeYTVideo('1zkyapT1mHI')"><i class="fas fa-times"></i></button>
+                        </div>
+                        <div class="yt-card-body">
+                            <h5>Pollution Control Systems</h5>
+                            <p>See how our emission control devices help industries meet compliance standards effortlessly.</p>
+                            <a href="https://www.youtube.com/watch?v=1zkyapT1mHI" target="_blank" class="yt-watch-btn">Watch on YouTube <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Channel CTA -->
+        <div class="yt-cta reveal">
+            <h4>More Videos on Our <span class="grad-text">YouTube Channel</span></h4>
+            <p>Subscribe to stay updated with our latest product launches, facility tours, and industry insights.</p>
+            <a href="https://www.youtube.com/@changotraoilfurnace" target="_blank" class="btn-yt">
+                <i class="fab fa-youtube"></i> Visit Our Channel
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-sec sec">
+    <div class="container">
+        <div class="sec-head reveal">
+            <h2 class="sec-title">Get In <span class="grad-text">Touch</span></h2>
+            <p class="sec-sub">Contact us for inquiries, quotations, or technical support</p>
+        </div>
+
+        <!-- Contact cards row -->
+        <div class="row g-4 mb-5">
+            <div class="col-lg-3 col-md-6 reveal">
+                <div class="contact-card">
+                    <div class="cc-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="cc-body">
+                        <h5>Visit Us</h5>
+                        <p>St. No. 1, Garcha Colony<br>Dhandari Kalan, Ludhiana</p>
+                        <a href="https://maps.app.goo.gl/3VnAM6749ghpPDr48" target="_blank" class="cc-link"><i class="fas fa-directions"></i> Get Directions</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 reveal reveal-delay-1">
+                <div class="contact-card">
+                    <div class="cc-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="cc-body">
+                        <h5>Email Us</h5>
+                        <p><a href="mailto:changotraoilfurnace@gmail.com">changotraoilfurnace@gmail.com</a></p>
+                        <a href="mailto:changotraoilfurnace@gmail.com" class="cc-link"><i class="fas fa-reply"></i> Send Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 reveal reveal-delay-2">
+                <div class="contact-card">
+                    <div class="cc-icon"><i class="fas fa-phone-alt"></i></div>
+                    <div class="cc-body">
+                        <h5>Call Us</h5>
+                        <p><a href="tel:+919872903244">+91 98729 03244</a></p>
+                        <a href="tel:+919872903244" class="cc-link"><i class="fas fa-phone"></i> Call Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 reveal reveal-delay-3">
+                <div class="contact-card">
+                    <div class="cc-icon"><i class="fas fa-clock"></i></div>
+                    <div class="cc-body">
+                        <h5>Working Hours</h5>
+                        <p>Mon – Sat: 9 AM – 6 PM</p>
+                        <p style="color:#28a745;font-size:.85rem;font-weight:700;margin-top:6px;"><i class="fas fa-circle me-1" style="font-size:.6rem;"></i> Open Now</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form + Info -->
+        <div class="row g-4 align-items-stretch">
+            <div class="col-lg-6 reveal">
+                <div class="info-panel">
+                    <h3>Let's Discuss <span class="grad-text">Your Project</span></h3>
+                    <p style="color:var(--text-2);margin-bottom:24px;">Our team of experts is ready to help you find the perfect industrial solution tailored to your requirements.</p>
+                    <div>
+                        <div class="benefit-row">
+                            <div class="ben-icon"><i class="fas fa-check-circle"></i></div>
+                            <div class="ben-body"><h6>Custom Solutions</h6><p>Tailored designs built for your specific needs</p></div>
+                        </div>
+                        <div class="benefit-row">
+                            <div class="ben-icon"><i class="fas fa-bolt"></i></div>
+                            <div class="ben-body"><h6>Quick Response</h6><p>We get back to you within 24 hours</p></div>
+                        </div>
+                        <div class="benefit-row">
+                            <div class="ben-icon"><i class="fas fa-user-tie"></i></div>
+                            <div class="ben-body"><h6>Expert Consultation</h6><p>Direct access to our senior technical team</p></div>
+                        </div>
+                    </div>
+                    <div class="cta-box">
+                        <i class="fas fa-headset"></i>
+                        <div>
+                            <h5>Need Immediate Help?</h5>
+                            <p>Call us for urgent inquiries</p>
+                            <a href="tel:+919872903244"><i class="fas fa-phone me-2"></i>+91 98729 03244</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 reveal reveal-delay-1">
+                <div class="form-panel">
+                    <h3>Send Us a <span class="grad-text">Message</span></h3>
+                    <form id="contactForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-lbl">Your Name *</label>
+                                <input type="text" class="form-ctrl" placeholder="John Doe" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-lbl">Email *</label>
+                                <input type="email" class="form-ctrl" placeholder="john@example.com" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-lbl">Phone Number</label>
+                                <input type="tel" class="form-ctrl" placeholder="+91 98765 43210">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-lbl">Product Interest *</label>
+                                <select class="form-ctrl" required>
+                                    <option value="">Select a product</option>
+                                    <option>Battery Recycling Plant</option>
+                                    <option>Rotary Furnace</option>
+                                    <option>Pollution Control Device</option>
+                                    <option>Grey Oxide Plant</option>
+                                    <option>Litharge Manufacturing</option>
+                                    <option>Zinc Oxide Plant</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-lbl">Your Message *</label>
+                                <textarea class="form-ctrl" placeholder="Tell us about your requirements..." required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="submit-btn" id="submitBtn">
+                                    <i class="fas fa-paper-plane"></i> Send Message
+                                </button>
+                            </div>
+                            <div class="col-12 text-center">
+                                <p style="color:var(--text-3);font-size:.83rem;margin:0;"><i class="fas fa-lock me-1"></i> Your information is secure and will not be shared</p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-4">
+                <div class="footer-logo">Changotra Oil Furnace</div>
+                <div class="footer-tagline">We Earned Trust</div>
+                <p class="footer-desc">Leading manufacturers of industrial furnace plants with decades of expertise in battery recycling, rotary furnaces, and pollution control solutions.</p>
+                <div class="social-row">
+                    <a href="https://maps.google.com/?q=Dhandari+Kalan,Ludhiana" target="_blank" class="soc-btn" title="Maps"><i class="fas fa-map-marked-alt"></i></a>
+                    <a href="mailto:changotraoilfurnace@gmail.com" class="soc-btn" title="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:+919872903244" class="soc-btn" title="Call"><i class="fas fa-phone"></i></a>
+                    <a href="https://wa.me/919872903244" target="_blank" class="soc-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.youtube.com/@changotraoilfurnace" target="_blank" class="soc-btn" title="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-6">
+                <p class="footer-heading">Quick Links</p>
+                <ul class="footer-list">
+                    <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="#products"><i class="fas fa-chevron-right"></i> Products</a></li>
+                    <li><a href="#videos"><i class="fas fa-chevron-right"></i> Videos</a></li>
+                    <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-6">
+                <p class="footer-heading">Our Products</p>
+                <ul class="footer-list">
+                    <li><a href="#products"><i class="fas fa-chevron-right"></i> Battery Recycling</a></li>
+                    <li><a href="#products"><i class="fas fa-chevron-right"></i> Rotary Furnace</a></li>
+                    <li><a href="#products"><i class="fas fa-chevron-right"></i> Pollution Control</a></li>
+                    <li><a href="#products"><i class="fas fa-chevron-right"></i> Grey Oxide Plant</a></li>
+                    <li><a href="#products"><i class="fas fa-chevron-right"></i> Zinc Oxide Plant</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <p class="footer-heading">Contact Info</p>
+                <ul class="footer-list">
+                    <li><span><i class="fas fa-map-marker-alt"></i> Ludhiana, Punjab</span></li>
+                    <li><span><i class="fas fa-phone"></i> +91 98729 03244</span></li>
+                    <li><span style="word-break:break-all;"><i class="fas fa-envelope"></i> changotraoilfurnace@gmail.com</span></li>
+                    <li><span><i class="fas fa-clock"></i> Mon–Sat: 9 AM–6 PM</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Changotra Oil Furnace. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- SCROLL TO TOP -->
+<button id="stt" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+<!-- Bootstrap JS (deferred) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+
+<script>
+/* ===== LOADER ===== */
+window.addEventListener('load', () => {
+    setTimeout(() => document.getElementById('loader').classList.add('gone'), 300);
+});
+
+/* ===== THEME ===== */
+const html = document.documentElement;
+const themeBtn = document.getElementById('themeBtn');
+const themeIcon = document.getElementById('themeIcon');
+let dark = localStorage.getItem('theme') === 'dark';
+
+function applyTheme() {
+    html.setAttribute('data-theme', dark ? 'dark' : 'light');
+    themeIcon.className = dark ? 'fas fa-sun' : 'fas fa-moon';
+    localStorage.setItem('theme', dark ? 'dark' : 'light');
+}
+applyTheme();
+themeBtn.addEventListener('click', () => { dark = !dark; applyTheme(); });
+
+/* ===== NAVBAR SCROLL ===== */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+    document.getElementById('stt').classList.toggle('vis', window.scrollY > 300);
+    highlightNav();
+}, { passive: true });
+
+/* ===== HAMBURGER ===== */
+const ham = document.getElementById('hamburger');
+const drawer = document.getElementById('mobileDrawer');
+ham.addEventListener('click', () => {
+    ham.classList.toggle('open');
+    drawer.classList.toggle('open');
+});
+drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    ham.classList.remove('open');
+    drawer.classList.remove('open');
+}));
+
+/* ===== SMOOTH SCROLL ===== */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        window.scrollTo({ top: target.offsetTop - 75, behavior: 'smooth' });
+    });
+});
+
+/* ===== ACTIVE NAV ===== */
+function highlightNav() {
+    const sections = document.querySelectorAll('section[id]');
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 200) current = s.id; });
+    document.querySelectorAll('.nav-links a, .mobile-drawer a').forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+}
+
+/* ===== SCROLL TO TOP ===== */
+document.getElementById('stt').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+/* ===== REVEAL ANIMATIONS ===== */
+const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); revealObs.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+/* ===== COUNTER ANIMATION ===== */
+const counterObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        document.querySelectorAll('.stat-num').forEach(el => {
+            const target = parseInt(el.dataset.count);
+            let n = 0;
+            const step = target / 50;
+            const timer = setInterval(() => {
+                n = Math.min(n + step, target);
+                el.textContent = Math.floor(n) + '+';
+                if (n >= target) clearInterval(timer);
+            }, 30);
+        });
+        counterObs.disconnect();
+    });
+}, { threshold: .5 });
+const heroSec = document.querySelector('.hero');
+if (heroSec) counterObs.observe(heroSec);
+
+/* ===== PRODUCT EXPAND ===== */
+document.querySelectorAll('.prod-toggle').forEach(btn => {
+    btn.addEventListener('click', e => {
+        e.stopPropagation();
+        const card = btn.closest('.prod-card');
+        const wasOpen = card.classList.contains('open');
+        document.querySelectorAll('.prod-card.open').forEach(c => {
+            c.classList.remove('open');
+            c.querySelector('.prod-toggle span').textContent = 'View Details';
+        });
+        if (!wasOpen) {
+            card.classList.add('open');
+            btn.querySelector('span').textContent = 'Hide Details';
+        }
+    });
+});
+
+/* ===== CLIENT CAROUSEL DUPLICATION ===== */
+['track1', 'track2'].forEach(id => {
+    const track = document.getElementById(id);
+    if (!track) return;
+    const clone = track.innerHTML;
+    track.innerHTML = clone + clone; // Duplicate for seamless loop
+});
+
+/* ===== YOUTUBE VIDEO CLICK-TO-PLAY ===== */
+function loadYTVideo(thumb) {
+    const videoId = thumb.dataset.videoId;
+    const embedWrap = document.getElementById('embed-' + videoId);
+    if (!embedWrap) return;
+
+    // Hide thumb, show embed
+    thumb.style.display = 'none';
+    embedWrap.classList.add('active');
+
+    // Set iframe src with autoplay
+    const iframe = embedWrap.querySelector('iframe');
+    iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
+}
+
+function closeYTVideo(videoId) {
+    const embedWrap = document.getElementById('embed-' + videoId);
+    const thumb = embedWrap.previousElementSibling;
+    const iframe = embedWrap.querySelector('iframe');
+
+    iframe.src = ''; // Stop video
+    embedWrap.classList.remove('active');
+    thumb.style.display = '';
+}
+
+/* ===== FORM SUBMIT ===== */
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+    btn.classList.add('success');
+    setTimeout(() => {
+        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+        btn.classList.remove('success');
+        this.reset();
+    }, 3500);
+});
+</script>
+</body>
+</html>
