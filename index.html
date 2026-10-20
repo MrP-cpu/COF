@@ -511,6 +511,7 @@
         .yt-card-body { padding: 18px 20px; flex: 1; display: flex; flex-direction: column; }
         .yt-card-body h5 { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 8px; color: var(--text); }
         .yt-card-body p { font-size: .88rem; color: var(--text-3); flex: 1; margin: 0 0 14px; }
+
         .yt-watch-btn {
             display: inline-flex; align-items: center; gap: 6px;
             color: var(--red); font-weight: 700; font-size: .88rem;
@@ -524,6 +525,7 @@
             padding-bottom: 56.25%; background: #000;
         }
         .yt-embed-wrap.active { display: block; }
+        .yt-embed-wrap.vertical { padding-bottom: 177.78%; }
         .yt-embed-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
         .yt-close {
             position: absolute; top: 10px; right: 10px; z-index: 10;
@@ -537,6 +539,7 @@
             text-align: center; margin-top: 40px; padding: 40px;
             background: var(--bg-2); border-radius: var(--radius-xl);
             border: 1px solid var(--border);
+            width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw;
         }
         .yt-cta h4 { font-size: 1.8rem; margin-bottom: 10px; }
         .yt-cta p { color: var(--text-2); margin-bottom: 20px; }
@@ -664,6 +667,31 @@
             text-align: center; color: rgba(255,255,255,.35); font-size: .85rem;
         }
 
+        /* Blinking Status Dot */
+        .status-dot {
+            display: inline-block;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            margin-right: 7px;
+            vertical-align: middle;
+            animation: statusBlink 1.4s infinite ease-in-out;
+        }
+
+        @keyframes statusBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.35; }
+        }
+
+
+        .brand-logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            display: block;
+        }
+
+
         /* ===== SCROLL TO TOP ===== */
         #stt {
             position: fixed; bottom: 24px; right: 24px; z-index: 999;
@@ -706,7 +734,7 @@
 <nav class="navbar" id="navbar">
     <div class="nav-inner">
         <a href="#home" class="brand">
-            <div class="brand-icon">COF</div>
+            <img src="COF_dark.png" alt="COF Logo" class="brand-logo">
             <div>
                 <div class="brand-name">Changotra Oil Furnace</div>
                 <div class="brand-sub">We Earned Trust</div>
@@ -884,6 +912,8 @@
                                 <li><i class="fas fa-check-circle"></i> Automated processing systems</li>
                                 <li><i class="fas fa-check-circle"></i> Energy efficient operations</li>
                                 <li><i class="fas fa-check-circle"></i> Custom capacity from 5–100 TPD</li>
+                                <li><i class="fas fa-check-circle"></i> Modular design for easy expansion</li>
+                                <li><i class="fas fa-check-circle"></i> Pollution control devices available with proper integration in plant</li>
                             </ul>
                             <div class="prod-apps"><strong>Applications:</strong> Lead recovery, Battery manufacturing units, Metal recovery plants</div>
                         </div>
@@ -1049,32 +1079,6 @@
                                 <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">5+</div>
                                 <div style="font-size:.8rem;color:var(--text-3);font-weight:600;">Videos</div>
                             </div>
-    <!--
-        <div class="yt-featured reveal">
-            <div class="row g-0 align-items-stretch">
-                <div class="col-lg-8">
-                    <div class="yt-featured-embed">
-                        
-                        <iframe
-                            src="https://youtu.be/waEEXPIxX48"
-                            title="Industrial Furnace Manufacturing Overview"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
-                            loading="lazy">
-                        </iframe>
-                    </div>
-                </div>
-                <div class="col-lg-4 d-flex align-items-center">
-                    <div class="yt-featured-info">
-                        <span class="yt-tag"><i class="fab fa-youtube"></i> Featured Video</span>
-                        <h3>Our Facility Tour</h3>
-                        <p>Take a virtual walkthrough of our state-of-the-art manufacturing plant. See how our expert engineers combine traditional craftsmanship with modern industrial technology.</p>
-                        <div class="d-flex gap-3 mt-4 flex-wrap">
-                            <div style="text-align:center;">
-                                <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">5+</div>
-                                <div style="font-size:.8rem;color:var(--text-3);font-weight:600;">Videos</div>
-                            </div> 
-                        -->
                   <!--          <div style="text-align:center;">
                                 <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">100K+</div>
                                 <div style="font-size:.8rem;color:var(--text-3);font-weight:600;">Total Views</div>
@@ -1091,30 +1095,51 @@
             </div>
         </div>
 
-        <!-- Video Grid 
+        <!-- Video cards grid -->
         <div class="yt-grid">
-            <div class="row g-4">
+            <div class="col-lg-4 col-md-6 reveal">
+                <div class="yt-card">
 
-                <div class="col-lg-4 col-md-6 reveal">
-                    <div class="yt-card">. -->
-                        <!-- Thumbnail + play; clicking loads iframe inline
-                        <div class="yt-thumb" data-video-id="L_jWHffIx5E" onclick="loadYTVideo(this)">
-                            <img src="https://img.youtube.com/vi/L_jWHffIx5E/hqdefault.jpg" alt="Battery Recycling Plant Tour" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=480&q=70'">
-                            <div class="yt-play"><div class="yt-play-btn"><i class="fas fa-play"></i></div></div>
-                            <span class="yt-duration">12:45</span>
-                        </div>
-                        <div class="yt-embed-wrap" id="embed-L_jWHffIx5E">
-                            <iframe src="" title="Battery Recycling Plant" allow="autoplay;encrypted-media" allowfullscreen loading="lazy"></iframe>
-                            <button class="yt-close" onclick="closeYTVideo('L_jWHffIx5E')"><i class="fas fa-times"></i></button>
-                        </div>
-                        <div class="yt-card-body">
-                            <h5>Battery Recycling Plant Tour</h5>
-                            <p>Complete walkthrough of our lead-acid battery recycling facility and process flow.</p>
-                            <a href="https://www.youtube.com/watch?v=L_jWHffIx5E" target="_blank" class="yt-watch-btn">Watch on YouTube <i class="fas fa-arrow-right"></i></a>
+                    <!-- Thumbnail -->
+                    <div class="yt-thumb" data-video-id="cYVofkKbOEQ" onclick="loadYTVideo(this)">
+                        <img src="https://img.youtube.com/vi/cYVofkKbOEQ/hqdefault.jpg"
+                            alt="Battery Recycling Shorts"
+                            loading="lazy">
+
+                        <div class="yt-play">
+                            <div class="yt-play-btn">
+                                <i class="fas fa-play"></i>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- Embed -->
+                    <div class="yt-embed-wrap" id="embed-cYVofkKbOEQ" style="display:none;">
+                        <iframe src=""
+                                title="Battery Recycling Shorts"
+                                allow="autoplay; encrypted-media"
+                                allowfullscreen>
+                        </iframe>
+
+                        <button class="yt-close" onclick="closeYTVideo('cYVofkKbOEQ')">
+                            ✖
+                        </button>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="yt-card-body">
+                        <h5>Battery Recycling (Shorts)</h5>
+                        <p>Quick look at our recycling process in action.</p>
+
+                        <a href="https://youtube.com/shorts/cYVofkKbOEQ?si=zqV-BVWym8W8XrGD"
+                        target="_blank"
+                        class="yt-watch-btn">
+                            Watch on YouTube →
+                        </a>
+                    </div>
+
                 </div>
- -->
+
                 <!-- Video Card 2
                 <div class="col-lg-4 col-md-6 reveal reveal-delay-1">
                     <div class="yt-card">
@@ -1158,15 +1183,17 @@
             </div>
         </div>
 -->
-        <!-- Channel CTA -->
-        <div class="yt-cta reveal">
-            <h4>More Videos on Our <span class="grad-text">YouTube Channel</span></h4>
-            <p>Subscribe to stay updated with our latest product launches, facility tours, and industry insights.</p>
-            <a href="https://www.youtube.com/channel/UC_HonZ-SPCNwO_l07zhK3vQ" target="_blank" class="btn-yt">
-                <i class="fab fa-youtube"></i> Visit Our Channel
-            </a>
         </div>
 
+    </div>
+
+    <!-- Channel CTA -->
+    <div class="yt-cta reveal">
+        <h4>More Videos on Our <span class="grad-text">YouTube Channel</span></h4>
+        <p>Subscribe to stay updated with our latest product launches, facility tours, and industry insights.</p>
+        <a href="https://www.youtube.com/channel/UC_HonZ-SPCNwO_l07zhK3vQ" target="_blank" class="btn-yt">
+            <i class="fab fa-youtube"></i> Visit Our Channel
+        </a>
     </div>
 </section>
 
@@ -1218,12 +1245,13 @@
                     <div class="cc-icon"><i class="fas fa-clock"></i></div>
                     <div class="cc-body">
                         <h5>Working Hours</h5>
-                        <p>Mon – Sat: 9 AM – 6 PM</p>
-                        <p style="color:#28a745;font-size:.85rem;font-weight:700;margin-top:6px;"><i class="fas fa-circle me-1" style="font-size:.6rem;"></i> Open Now</p>
+                        <p>Mon – Sat: 9:00 AM – 6:00 PM</p>
+                        <p id="businessStatus" style="font-size:0.85rem; font-weight:700; margin-top:6px;">
+                            <!-- Dynamic status will be injected by JavaScript -->
+                        </p>
                     </div>
                 </div>
             </div>
-        </div>
 
      
         <!-- Form + Info -->
@@ -1413,6 +1441,39 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     });
 });
 
+function loadYTVideo(thumb) {
+    const videoId = thumb.dataset.videoId;
+    const embedWrap = document.getElementById('embed-' + videoId);
+    if (!embedWrap) return;
+
+    // Check if it's a short and add vertical class
+    const card = thumb.closest('.yt-card');
+    const watchBtn = card.querySelector('.yt-watch-btn');
+    if (watchBtn && watchBtn.href.includes('/shorts/')) {
+        embedWrap.classList.add('vertical');
+    }
+
+    // Hide thumb, show embed
+    thumb.style.display = 'none';
+    embedWrap.classList.add('active');
+
+    // Set iframe src with autoplay
+    const iframe = embedWrap.querySelector('iframe');
+    iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
+}
+
+function closeYTVideo(videoId) {
+    const embedWrap = document.getElementById('embed-' + videoId);
+    const thumb = embedWrap.previousElementSibling;
+    const iframe = embedWrap.querySelector('iframe');
+
+    iframe.src = ''; // Stop video
+    embedWrap.classList.remove('active');
+    embedWrap.classList.remove('vertical');
+    thumb.style.display = '';
+}
+
+
 /* ===== ACTIVE NAV ===== */
 function highlightNav() {
     const sections = document.querySelectorAll('section[id]');
@@ -1501,6 +1562,36 @@ function closeYTVideo(videoId) {
     embedWrap.classList.remove('active');
     thumb.style.display = '';
 }
+
+/* ===== BUSINESS HOURS - BLINKING STATUS ===== */
+function updateBusinessStatus() {
+    const statusEl = document.getElementById('businessStatus');
+    if (!statusEl) return;
+
+    const now = new Date();
+    const day = now.getDay();        // 0 = Sunday
+    const hour = now.getHours();
+
+    // Open: Monday to Saturday (day 1-6), 9:00 AM - 6:00 PM
+    const isOpen = (day >= 1 && day <= 6) && (hour >= 9 && hour < 18);
+
+    if (isOpen) {
+        statusEl.innerHTML = `
+            <span class="status-dot" style="background:#28a745;"></span>
+            <span style="color:#28a745;">Open Now</span>
+        `;
+    } else {
+        statusEl.innerHTML = `
+            <span class="status-dot" style="background:#dc3545;"></span>
+            <span style="color:#dc3545;">Closed Now</span>
+        `;
+    }
+}
+
+// Initialize and update every minute
+updateBusinessStatus();
+setInterval(updateBusinessStatus, 60000);
+
 
 /* ===== FORM SUBMIT ===== */
 document.getElementById('contactForm').addEventListener('submit', function(e) {
